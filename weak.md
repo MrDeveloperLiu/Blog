@@ -152,7 +152,7 @@ struct weak_table_t {
 };
 ```
 
-> `weak_entry_t` 我们可以看到最终存储`weak`指针地址的地方则是它，实际上可以说是数量为4的一个数组结构
+> `weak_entry_t` 我们可以看到最终存储`weak`指针地址的地方则是它，实际上就是一个4容量的静态/动态数组
 ```
 #define WEAK_INLINE_COUNT 4
 #define REFERRERS_OUT_OF_LINE 2

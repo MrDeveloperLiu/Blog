@@ -3,18 +3,24 @@
 * 框架遵循的引用关系
 
 > /*
-> <br> MVVM框架结构需要遵循如下关系：即`VC`或者`View`引用着`ViewModel`（反之不行），`ViewModel`引用着`Model`（同样：反之不行）
-> <br>*/
-> <br>那么为什么呢，为什么非要拥有如下关系？
-> <br>`VC/View => VM => Model`
+>  MVVM框架结构需要遵循如下关系：即`VC`或者`View`引用着`ViewModel`（反之不行），`ViewModel`引用着`Model`（同样：反之不行）
+> */
+> 那么为什么呢，为什么非要拥有如下关系？
+> `VC/View => VM => Model`
 
 
 * 引用结构中的角色
-> 1. `VC、View` 扮演整个页面如某些Page，某些独立与`VC`的全屏展示的`View` <br> 思考: 在传统的`MVC`架构中，`VC、View`处理的太多的逻辑，导致特别臃肿，难以维护。所谓的`VC、View`是否应该更多的关心，我某个控件应该如何展示
+> 1. `VC、View` 扮演整个页面如某些Page，某些独立与`VC`的全屏展示的`View`  
+>
+>    思考: 在传统的`MVC`架构中，`VC、View`处理的太多的逻辑，导致特别臃肿，难以维护。所谓的`VC、View`是否应该更多的关心，我某个控件应该如何展示
 
-> 2. `VM` 扮演事件发送者，逻辑决策者，数据获取者 <br> 思考：`View`利用与`ViewModel`的绑定关系，将用户事件分发到`ViewModel`中，由`ViewModel`调动`Model`去获取数据等等
+> 2. `VM` 扮演事件发送者，逻辑决策者，数据获取者 
+>
+>     思考：`View`利用与`ViewModel`的绑定关系，将用户事件分发到`ViewModel`中，由`ViewModel`调动`Model`去获取数据等等
 
-> 3. `Model` 扮演数据处理者 <br> ***当我们从服务获取完数据之后，由`Model`回调到`ViewModel`中时的`ViewModel`获取到最新的数据，再由`ViewModel`触发界面更新，将最新的数据绑定到`View`上
+> 3. `Model` 扮演数据处理者 
+>
+>     ***当我们从服务获取完数据之后，由`Model`回调到`ViewModel`中时的`ViewModel`获取到最新的数据，再由`ViewModel`触发界面更新，将最新的数据绑定到`View`上
 
 * 那我们来拿个个例子来说
 ```
