@@ -261,3 +261,103 @@ id *autoreleaseNoPage(id obj)
 
 #### 释放对象
 
+我们先来看代码
+
+```
+static inline void pop(void *token)
+{
+    AutoreleasePoolPage *page;
+    id *stop;
+    if (token == (void*)EMPTY_POOL_PLACEHOLDER) {
+        page = hotPage();
+        if (!page) {
+            return setHotPage(nil);
+        }
+        page = coldPage();
+        token = page->begin();
+    } else {
+        page = pageForPointer(token);
+    }
+    stop = (id *)token;
+    return popPage<false>(token, page, stop);
+}
+
+static inline void setHotPage(AutoreleasePoolPage *page) 
+{
+    if (page) page->fastcheck();
+    tls_set_direct(key, (void *)page);
+}
+
+static inline AutoreleasePoolPage *coldPage() 
+{
+    AutoreleasePoolPage *result = hotPage();
+    if (result) {
+        while (result->parent) {
+            result = result->parent;
+            result->fastcheck();
+        }
+    }
+    return result;
+}
+
+static AutoreleasePoolPage *pageForPointer(uintptr_t p) 
+{
+    AutoreleasePoolPage *result;
+    uintptr_t offset = p % SIZE;
+
+    ASSERT(offset >= sizeof(AutoreleasePoolPage));
+
+    result = (AutoreleasePoolPage *)(p - offset);
+    result->fastcheck();
+
+    return result;
+}
+```
+
+> pop到指定对象
+> 若当前的token为EMPTY_POOL_PLACEHOLDER：则判断表有没有被初始化，没有则清空线程数据，有则取到最上层的表的起始位置
+> 若当前的token为其他对象：则根据对象地址，找到对应的表
+
+`popPage`实际上是一个模板方法
+
+```
+template<bool allowDebug> static void popPage(void *token, AutoreleasePoolPage *page, id *stop)
+{
+    page->releaseUntil(stop);
+}
+
+void releaseUntil(id *stop) 
+{
+    while (this->next != stop) {
+        AutoreleasePoolPage *page = hotPage();
+        // fixme I think this `while` can be `if`, but I can't prove it
+        while (page->empty()) {
+            page = page->parent;
+            setHotPage(page);
+        }
+        page->unprotect();
+        id obj = *--page->next;
+        memset((void*)page->next, SCRIBBLE, sizeof(*page->next));
+        page->protect();
+        if (obj != POOL_BOUNDARY) {
+            objc_release(obj);
+        }
+    }
+
+    setHotPage(this);
+}
+```
+
+> 而后会调用 `page->releaseUntil(stop)` 则，该方法会一直后移`next`指针，直到`next`指针为`stop`，将非哨兵对象全部调用`objc_release`释放，同时将每个栈顶的对象指针地址设置为`static uint8_t const SCRIBBLE = 0xA3;`
+
+
+
+#### 最后
+
+我们来解答`autoreleasepool`的嵌套问题，apple正是通过双向链表+哨兵对象来解决释放池嵌套释放池的操作
+
+每当调用`@autoreleasepool`时，系统并不一定会创建新的释放池，而是通过插入一个哨兵对象，或者占位对象来完成该操作
+
+不得不赞扬apple工程师的智慧
+
+#### Ths
