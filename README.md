@@ -7,6 +7,7 @@
 * objc关键字[weak](https://github.com/MrDeveloperLiu/Blog/blob/master/knowledge/weak.md)
 * objc中泛型[generic](https://github.com/MrDeveloperLiu/Blog/blob/master/knowledge/generic.md)
 * ARC之[autoreleasepool](https://github.com/MrDeveloperLiu/Blog/blob/master/knowledge/autoreleasepool.md)
+* 你不太了解的[isEqual](https://github.com/MrDeveloperLiu/Blog/blob/master/knowledge/isEqual.md)
 
 ### 总结篇
 * [23种设计模式总结](https://github.com/MrDeveloperLiu/Blog/blob/master/summary/23种设计模式总结.md)
