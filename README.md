@@ -12,3 +12,4 @@
 
 ### 总结篇
 * [23种设计模式总结](https://github.com/MrDeveloperLiu/Blog/blob/master/summary/23种设计模式总结.md)
+* [设计原则](https://github.com/MrDeveloperLiu/Blog/blob/master/summary/设计原则.md)
