@@ -2,11 +2,8 @@
 
 * 框架遵循的引用关系
 
-> /*
->  MVVM框架结构需要遵循如下关系：即`VC`或者`View`引用着`ViewModel`（反之不行），`ViewModel`引用着`Model`（同样：反之不行）
-> */
-> 那么为什么呢，为什么非要拥有如下关系？
-> `VC/View => VM => Model`
+> `VC`或者`View`引用着`ViewModel`（反之不行），`ViewModel`引用着`Model`（同样：反之不行）
+>  `VC/View => VM => Model`
 
 
 * 引用结构中的角色
@@ -131,3 +128,12 @@ class ViewController: UIViewController, ViewUpdater{
 
 }
 ```
+
+
+
+#### 优点
+
+* 层次结构分离，职责更加单一：即，`VC`负责逻辑控制，`VM`负责数据绑定，`M`负责数据获取，`View`负责数据的展示
+* `VM`的封装使得其不依赖于`VC`或者`View`可单独进行单元测试，而且根据它的这种特性，我们可以将其复用到功能相似地方
+* 拆分了控制器的代码后，传统的`MVC`中的`Controller`不再变得那么臃肿
+
