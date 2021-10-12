@@ -10,7 +10,7 @@
 * 你不太了解的[isEqual](https://github.com/MrDeveloperLiu/Blog/blob/master/knowledge/isEqual.md)
 * objc之[block](https://github.com/MrDeveloperLiu/Blog/blob/master/knowledge/block.md)
 * [使用cocoapods进行组件化](https://github.com/MrDeveloperLiu/Blog/blob/master/knowledge/使用cocoapods进行组件化.md)
-
+* [app常用架构](https://github.com/MrDeveloperLiu/Blog/blob/master/knowledge/App常用架构.md)
 
 ### 总结篇
 * [23种设计模式总结](https://github.com/MrDeveloperLiu/Blog/blob/master/summary/23种设计模式总结.md)
