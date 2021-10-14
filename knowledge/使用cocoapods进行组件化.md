@@ -121,7 +121,7 @@ But，'路由'暂不在本文讨论范围内。那么我们来学习一下，使
 * 更新仓库
 
   ```
-  pod repo update [REPO_NAME] [库.podspec] --allow-warnings
+  pod repo push [REPO_NAME] [库.podspec] --allow-warnings
   ```
 
   我们需要这个操作将spec文件发布到私有库中
