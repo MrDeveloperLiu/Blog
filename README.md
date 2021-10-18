@@ -11,6 +11,8 @@
 * objc之[block](https://github.com/MrDeveloperLiu/Blog/blob/master/knowledge/block.md)
 * [使用cocoapods进行组件化](https://github.com/MrDeveloperLiu/Blog/blob/master/knowledge/使用cocoapods进行组件化.md)
 * [app常用架构](https://github.com/MrDeveloperLiu/Blog/blob/master/knowledge/App常用架构.md)
+* [iOS中锁](https://github.com/MrDeveloperLiu/Blog/blob/master/knowledge/iOS中锁.md)
+
 
 ### 总结篇
 * [23种设计模式总结](https://github.com/MrDeveloperLiu/Blog/blob/master/summary/23种设计模式总结.md)
