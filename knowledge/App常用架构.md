@@ -29,20 +29,23 @@
 
 使用流程：
 
-* VC引用着V与P，则P引用着M并且弱引用着V
+* VC引用着V与M，由P层作为逻辑转发层（V与P双向通信，M与P双向通信）
 * 当V发出事件后，首先与P交互，P驱动M更新数据，M更新完成数据之后，回调给P
 * P通过回调，驱动着V更新等等
+
+分享个[(链接)](https://blog.csdn.net/ddnosh/article/details/91281624)
 
 
 
 3、**mvvm**其实在前面有介绍过，详细请见[app常用架构之mvvm](https://github.com/MrDeveloperLiu/Blog/blob/master/knowledge/mvvm.md)
 
-* 最终实际上是由**`p`**演进而来的**`vm`**：ViewModel
-* ViewModel实际上由P与V的数据共同构成
+* 最终实际上是由**`p`**演进而来的**`vm`**：ViewModel，负责逻辑处理，双向绑定
 
 使用流程：
 
 * VC引用着V，V引用着VM，则VM负责与V进行双向绑定
 * 当V触发`event`时，VM触发M的更新数据，M更新数据后，回调给VM
 * VM由于拥有的V的数据层，数据层与V拥有绑定关系，则驱动着V的更新
+
+分享个[(链接)](https://blog.csdn.net/ddnosh/article/details/91345222)
 
