@@ -12,7 +12,7 @@
 * 使用cocoapods进行[组件化](knowledge/使用cocoapods进行组件化.md)
 * app[常用架构](knowledge/App常用架构.md)
 * iOS中[锁](knowledge/iOS中锁.md)
-
+* Swift中[方法派发](knowledge/swift方法派发.md)
 
 ### 总结篇
 * 23种设计模式[总结](summary/23种设计模式总结.md)
