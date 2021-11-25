@@ -15,7 +15,7 @@
 
 ### Swift学习
 * Swift中[方法派发](swift/swift方法派发.md)
-* Swifty一些[总结](swift/Swift一些总结.md)
+* Swift一些[总结](swift/Swift一些总结.md)
 
 ### 总结篇
 * 23种设计模式[总结](summary/23种设计模式总结.md)
