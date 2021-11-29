@@ -22,6 +22,13 @@
 * 设计[原则](summary/设计原则.md)
 * [排序](algorithm/sort/算法学习笔记-排序.md)
 
+### 算法学习
+
+* [贪婪算法](./algorithm/贪婪算法.md)
+* [分治算法](./algorithm/分治算法.md)
+* [动态规划](./algorithm/动态规划.md)
+* [回溯算法](./algorithm/回溯算法.md)
+
 ### 摘抄记录
 * UICollectionViewLayout[方法翻译](summary/UICollectionViewLayout.md)
 
