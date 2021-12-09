@@ -34,8 +34,6 @@
 
 ### 直播技术探究
 > 分享一下对于直播技术的探究，目前搜集了许多的第三方框架：
-> 推流器：优酷来疯开源LFLiveKit  基于（GDCL）
-> 拉流：IJKPlayer 基于（FFPlay）
-> 需要安装nginx的rmtp模块，即可自制直播方案
-> 链接: https://pan.baidu.com/s/1efOIaZxoMFqmuGSUkyeNKw  密码: 8eqm
-
+> 推流器：优酷来疯开源LFLiveKit  基于（GDCL、librtmp）
+> 拉流：IJKPlayer 基于（ffplay、ffmpeg）
+> 需要安装nginx的rtmp模块，即可自制直播方案
