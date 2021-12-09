@@ -106,7 +106,11 @@ struct Adapter20: Adapter{...}
 struct Adapter30: Adapter{...}
 ....
 
-let map: [String: Adapter];
+let map: [String: Adapter] = [
+    '1.0': Adapter10(),
+    '2.0': Adapter20()
+    '3.0': Adapter30()
+]
 let adapter = map[version] ?? map['1.0']
 adapter.doSth()
 ```
