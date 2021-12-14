@@ -17,6 +17,7 @@
 * 23种设计模式[总结](summary/23种设计模式总结.md)
 * 设计[原则](summary/设计原则.md)
 * [排序](algorithm/sort/算法学习笔记-排序.md)
+* lldb的一些[命令](knowledge/lldb一些简单命令.md)
 
 ### 摘抄记录
 * UICollectionViewLayout[方法翻译](summary/UICollectionViewLayout.md)
