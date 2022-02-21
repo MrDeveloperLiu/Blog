@@ -22,7 +22,7 @@ As一名iOS开发工程师本文需要你带着问题去阅读:
 }
 ```
 
-Oh mother fucker，每当我们看到一个`init`字眼，免不了的都是这种诸如`release`、`autorelease`的关键字跟着，更有甚者，当我们对某个对象发送`retain`、`copy`等关键字时，我们也需要显示的调用`释放`命令。
+Oh mother fucker，每当我们看到一个`alloc`字眼，免不了的都是这种诸如`release`、`autorelease`的关键字跟着，更有甚者，当我们对某个对象发送`retain`、`copy`等关键字时，我们也需要显示的调用`释放`命令。
 
 这其实很不友好：
 
